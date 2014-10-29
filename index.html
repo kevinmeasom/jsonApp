@@ -15,32 +15,31 @@
 </head>
 <body>
 
-	<div id="page1" data-type="page">
-		<div data-type="header" data-position="fixed">
-			<img id="logo" src="logo.png" />
-			<ul class="nav-wrap">
-				<li id="home" class="nav-item inline"><a href="#home">Home</a></li>
-				<li id="about" class="page nav-item"><a href="#about">About Us</a></li>
-				<li id="resources" class="nav-item"><a href="#category">Resource Guides</a></li>
-				<li id="strategy" class="cat nav-item"><a href="#category">Strategy</a></li>
-				<li id="philosophy" class="cat nav-item"><a href="#category">Philosophy</a></li>
-				<li id="features" class="cat nav-item"><a href="#category">Features</a></li>
-				<li id="news" class="cat nav-item"><a href="#category">News</a></li>
-				<li id="seo" class="cat nav-item"><a href="#category">SEO</a></li>
-				<li id="subscribe" class="nav-item inline"><a href="http://linkarati.com/subscribe/" id="home">Subscribe</a></li>
-				<li id="contact-us" class="page nav-item"><a href="#contact-us">Contact Us</a></li>
-			</ul>
+	<div id="page1" data-role="page" data-transition="slide" data-theme="a">
+		<div data-role="header" data-position="fixed">
 			<h1>My First Page</h1>
 		</div>
-		<div data-type="content">
+		<div data-role="content">
 			<h2>Welcome to my first page!</h2>
 			<p>This is a some test conetne on my first page.</p>
 			<a href="#page2" data-type="button">Page 2</a>
 		</div>
-		<div data-type="footer">
+		<div data-role="footer">
 
 		</div>
 	</div>
+	<div id="page2" data-role="page" data-theme="a" data-transition="slide">
+		<div data-role="header" data-position="fixed">
+			<h1>My Second Page</h1>
+		</div>
+		<div data-role="content">
+			<h2>Welcome to my second page!</h2>
+			<p>This is a some test conetne on my second page.</p>
+			<a href="#page1" data-type="button">Page 1</a>
+		</div>
+		<div data-role="footer">
 
+		</div>
+	</div>
 </body>
 </html>

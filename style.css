@@ -1,0 +1,62 @@
+img { max-width: 100%; }
+h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-family: 'ubuntu',arial, sans-serif;  }
+a { color: #00AFEF; text-decoration: none; }
+header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888; height: 6%; width: 95%; top: 0; }
+#spacer { height: 7%; width: 100%; }
+.show { display: block !important; }
+.button { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }
+.buttons .button { display: inline-block; padding: 0; background: transparent; }
+#full-site { display: block; text-align: center; font-size: 18px; }
+#shareme { margin-top: 10px; z-index: -1; position: relative; }
+.googleplus { width: 72px; }
+.facebook, .twitter { width: 90px; }
+#header { position: fixed; width: 100%; }
+#search-form { position: absolute; right: 0; top: 0; text-align: right; }
+#search-icon { width: 50%; padding: 10px; max-width: 30px; position: relative; }
+.form-group { display: none; }
+#search-form .form-group div { display: inline-block; }
+#search { width: 100%; }
+.submit { display: none; }
+#more-cat { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }
+#more, #more-cat { display: block; margin-top: 4%; text-align: center; font-size: 22px; text-transform: uppercase; text-decoration: none; }
+.navcon { width: 60px; }
+.navcon:hover { cursor: pointer; }
+#home { background: url('images/home.png') no-repeat #00AEFE; }
+#about { background: url('images/about.png') no-repeat #00AEFE; }
+#resources { background: url('images/resources.png') no-repeat #00AEFE; }
+#strategy { background: url('images/strategy.png') no-repeat #00AEFE; }
+#philosophy { background: url('images/philosophy.png') no-repeat #00AEFE; }
+#features { background: url('images/features.png') no-repeat #00AEFE; }
+#news { background: url('images/news.png') no-repeat #00AEFE; }
+#seo { background: url('images/seo.png') no-repeat #00AEFE; }
+#subscribe { background: url('images/subscribe.png') no-repeat #00AEFE; }
+#contact-us { background: url('images/contact.png') no-repeat #00AEFE; }
+#nav { color: #ffffff !important; }
+#nav a { color: #FFFFFF !important; display: block; text-shadow: none !important; }
+.nav-wrap { position: fixed; display: none; width: 60%; font-size: 18px; list-style-type: none; padding: 0; margin-top: 0; }
+.nav-item { padding: 3% 3% 3% 15%; /*text-indent: 60px;*/ text-shadow: none !important; color: #FFFFFF !important; background: #00AFEF; background-size: 40px !important; background-position-x: 2% !important; background-position-y: 50% !important; border: solid 1px #fff; }
+.nav-item:hover { cursor: pointer; }
+.nav-item a { color: #FFFFFF !important; }
+#logo { width: 50%; max-width: 225px; }
+#wrapper { background: #FFFFFF !important; padding-top: 5%; }
+.container { width: 80%; margin: 0 auto; }
+#poster { margin-bottom: -3%; color: #003462; font-size: 14px; text-transform: uppercase; }
+#posts { clear: both; }
+.post { clear: both; overflow: auto; margin: 4% 0; border-bottom: solid 2px #888888; }
+.post img { height: auto; float: right; margin: 3%; }
+.text { padding-top: 1%; }
+.text h2 { color: #00AFEF; cursor: pointer; font-weight: 700; font-size: 18px;  }
+.post-meta { color: #888888; display: block; margin: 2% 0; }
+#text img { width: 100%; display: block; }
+#pagination { list-style-type: none; padding: 0; margin: 0; }
+#pagination li { background: #00AFEF; color: #FFFFFF; display: inline-block; padding: 1%; margin: 2px; }
+#pagination li:hover { cursor: pointer; text-decoration: underline; }
+a.the+value+of+links { color: #000 !important; }
+@media only screen and (max-width: 700px) {
+	.nav-item { /*text-indent: 50px !important;*/ background-size: 30px !important; }
+}
+@media only screen and (max-width: 430px) {
+	.container { width: 90%; }
+	.nav-item { /*text-indent: 15% !important;*/ background-size: 10% !important; }
+	.post img { width: 100%; }
+}
