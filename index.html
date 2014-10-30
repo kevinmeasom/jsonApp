@@ -1,45 +1,140 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Test App</title>
-	<meta charset="utf-8">
-   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-   	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--link rel="stylesheet" href="js/themes/myTheme.css" />
-  	<link rel="stylesheet" href="js/themes/jquery.mobile.icons.min.css" /-->
-  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="js/themes/myTheme.css" />
+        <link rel="stylesheet" href="js/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script src="js/handlebars.js"></script>
+        <script src="js/index.js"></script>
+        <title>Linkarati</title>
+    </head>
+    <body>
+        <div id="blog-page" data-role="page">
+            <div data-role="header">
+                <h1>Linkarati</h1>
+            </div><!-- /#header -->
+            
+            <div id="blog-content" data-role="content">
+                
+                
+                <div id="blog-data"></div>
 
-	<div id="page1" data-role="page" data-transition="slide" data-theme="a">
-		<div data-role="header" data-position="fixed">
-			<h1>My First Page</h1>
-		</div>
-		<div data-role="content">
-			<h2>Welcome to my first page!</h2>
-			<p>This is a some test conetne on my first page.</p>
-			<a href="#page2" data-type="button">Page 2</a>
-		</div>
-		<div data-role="footer">
 
-		</div>
-	</div>
-	<div id="page2" data-role="page" data-theme="a" data-transition="slide">
-		<div data-role="header" data-position="fixed">
-			<h1>My Second Page</h1>
-		</div>
-		<div data-role="content">
-			<h2>Welcome to my second page!</h2>
-			<p>This is a some test conetne on my second page.</p>
-			<a href="#page1" data-type="button">Page 1</a>
-		</div>
-		<div data-role="footer">
+                <script id="blog-template" type="text/x-handlebars-template">
+                    
+                    {{#each posts}}
+                        
+                        <div id="{{id}}" class="home post">
+                            <div class="text">
+                                <h2>{{{title}}}</h2>
+                                <span class="post-meta">{{date}} | {{author.name}}</span>
+                                <img src="{{thumbnail}}"/>
+                                <p>{{{excerpt}}}</p>
+                                <a class="button" data-transition="slide" href="#single">Read More</a>
+                            </div>
+                        </div>
 
-		</div>
-	</div>
-</body>
+                    {{/each}}
+
+                </script>
+
+
+                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
+                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer">
+                <h1> built with phonegap and jquery mobile</h1>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            app.blog();
+        </script>
+        </div><!-- /#blog-page -->
+
+
+        <div id="strategy-page" data-role="page">
+            <div data-role="header">
+                <h1>Linkarati</h1>
+            </div><!-- /#header -->
+            
+            <div id="strategy-content" data-role="content">
+                
+                
+                <div id="strategy-data"></div>
+
+
+                <script id="strategy-template" type="text/x-handlebars-template">
+                    
+                    {{#each posts}}
+                        
+                        <div id="{{id}}" class="home post">
+                            <div class="text">
+                                <h2>{{{title}}}</h2>
+                                <span class="post-meta">{{date}} | {{author.name}}</span>
+                                <img src="{{thumbnail}}"/>
+                                <p>{{{excerpt}}}</p>
+                            </div>
+                        </div>
+
+                    {{/each}}
+
+                </script>
+                <a class="button more" href="#strategy-page">more</a>
+
+
+                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
+                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer">
+                <h1> built with phonegap and jquery mobile</h1>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            $i = 1;
+            $('.more').on('vclick',function(e){
+                $i++;
+                app.strategy($i);
+                e.preventDefault();
+            });
+            app.strategy(1);
+        </script>
+        </div><!-- /#blog-page -->
+
+
+        <div id="blog-page" data-role="page">
+            <div data-role="header">
+                <h1>Linkarati</h1>
+            </div><!-- /#header -->
+            
+            <div id="blog-content" data-role="content">
+                
+                
+                <div id="single-data"></div>
+
+
+                <script id="single-template" type="text/x-handlebars-template">
+                    <h1>{{title}}</h1>
+                    {{{content}}}
+                </script>
+
+                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
+                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer">
+                <h1> built with phonegap and jquery mobile</h1>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            app.single();
+        </script>
+        </div><!-- /#blog-page -->
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
 </html>

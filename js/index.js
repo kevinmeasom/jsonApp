@@ -16,19 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-Handlebars.registerHelper("debug", function(optionalValue) {
-  console.log("Current Context");
-  console.log("====================");
-  console.log(this);
- 
-  if (optionalValue) {
-    console.log("Value");
-    console.log("====================");
-    console.log(optionalValue);
-  }
-});
-
-
 
 
 
@@ -68,7 +55,7 @@ var app = {
         function getBlogs() {
             var dfd = $.Deferred();
             $.ajax({
-                url: 'http://linkarati.com/api/get_recent_posts/',
+                url: 'http://linkarati.com/api/get_recent_posts/?count=10&date_format=m/d/Y&callback=?',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data){
@@ -77,6 +64,37 @@ var app = {
                     var blogData = template(data);
                     $('#blog-data').html(blogData);
                     $('#blog-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
+    strategy: function(e){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=strategy&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#strategy-template").html();
+                    var template = Handlebars.compile(source);
+                    var strategyData = template(data);
+                    $('#strategy-data').append(strategyData);
+                    $('#strategy-data').trigger('create');
                     dfd.resolve(data);
 
                 },
@@ -104,24 +122,4 @@ var app = {
             $('#single-data').html(postData);
 
     },
-
-    portfolio: function(){
-        $.ajax({
-            url: 'http://alexbachuk.com/?json=get_recent_posts&post_type=portfolio',
-            type: 'GET',
-            dataType: 'json',
-            success: function(data){
-                var source   = $("#portfolio-template").html();
-                var template = Handlebars.compile(source);
-                var portfolioData = template(data);
-                $('#portfolio-data').html(portfolioData);
-                $('#portfolio-data').trigger('create');
-
-            },
-            error: function(data){
-                console.log(data);
-            }
-        });
-    }
-
 };
