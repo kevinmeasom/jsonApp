@@ -3,24 +3,40 @@
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" href="js/themes/myTheme.css" />
-        <link rel="stylesheet" href="js/themes/jquery.mobile.icons.min.css" />
+        <!-- link rel="stylesheet" href="js/themes/myTheme.css" /-->
+        <!-- link rel="stylesheet" href="js/themes/jquery.mobile.icons.min.css" /-->
         <link rel="stylesheet" href="js/css/jquery.mobile-1.3.2.min.css" />
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/custom.js"></script>
         <title>Linkarati</title>
+
+        <script type="text/javascript">
+            app.initialize();
+        </script>
     </head>
     <body>
         <div id="blog-page" data-role="page">
-            <div data-role="header">
-                <h1>Linkarati</h1>
+            <div data-role="header" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/" id="home">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
             </div><!-- /#header -->
             
             <div id="blog-content" data-role="content">
-                
                 
                 <div id="blog-data"></div>
 
@@ -42,29 +58,43 @@
                     {{/each}}
 
                 </script>
-
-
-                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
-                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
+                <a class="button more-blog" href="#blog-page">more</a>
             </div><!-- /#blog-content -->
             
-            <div id="footer" data-role="footer">
+            <div id="footer" data-role="footer" data-theme="b">
                 <h1> built with phonegap and jquery mobile</h1>
             </div><!-- /#footer -->
         <script type="text/javascript">
-            app.blog();
+            $l = 1;
+            $('.more-blog').on('vclick',function(e){
+                $l++;
+                app.blog($l);
+                //e.preventDefault();
+            });
+            app.blog(1);
         </script>
         </div><!-- /#blog-page -->
 
 
         <div id="strategy-page" data-role="page">
-            <div data-role="header">
-                <h1>Linkarati</h1>
+            <div data-role="header" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/" id="home">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
             </div><!-- /#header -->
             
             <div id="strategy-content" data-role="content">
-                
-                
+                <a href="index.html" class="right" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="b">Back</a>
+
                 <div id="strategy-data"></div>
 
 
@@ -84,35 +114,88 @@
                     {{/each}}
 
                 </script>
-                <a class="button more" href="#strategy-page">more</a>
-
-
-                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
-                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
+                <a class="button more-strategy" href="#strategy-page">more</a>
             </div><!-- /#blog-content -->
             
-            <div id="footer" data-role="footer">
+            <div id="footer" data-role="footer" data-theme="b">
                 <h1> built with phonegap and jquery mobile</h1>
             </div><!-- /#footer -->
         <script type="text/javascript">
             $i = 1;
-            $('.more').on('vclick',function(e){
+            $('.more-strategy').on('vclick',function(e){
                 $i++;
                 app.strategy($i);
-                e.preventDefault();
+                //e.preventDefault();
             });
             app.strategy(1);
         </script>
-        </div><!-- /#blog-page -->
+        </div><!-- /#strategy-page -->
+
+
+        <div id="philosophy-page" data-role="page">
+            <div data-role="header" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/" id="home">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
+            </div><!-- /#header -->
+            
+            <div id="philosophy-content" data-role="content">
+                <a href="index.html" class="right" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="b">Back</a>
+                
+                <div id="philosophy-data"></div>
+
+
+                <script id="philosophy-template" type="text/x-handlebars-template">
+                    
+                    {{#each posts}}
+                        
+                        <div id="{{id}}" class="home post">
+                            <div class="text">
+                                <h2>{{{title}}}</h2>
+                                <span class="post-meta">{{date}} | {{author.name}}</span>
+                                <img src="{{thumbnail}}"/>
+                                <p>{{{excerpt}}}</p>
+                            </div>
+                        </div>
+
+                    {{/each}}
+
+                </script>
+                <a class="button more-philosophy" href="#philosophy-page">more</a>
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer" data-theme="b">
+                <h1> built with phonegap and jquery mobile</h1>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            $m = 1;
+            $('.more-philosophy').on('vclick',function(e){
+                $m++;
+                app.strategy($m);
+                //e.preventDefault();
+            });
+            app.philosophy(1);
+        </script>
+        </div><!-- /#philosophy-page -->
 
 
         <div id="blog-page" data-role="page">
             <div data-role="header">
-                <h1>Linkarati</h1>
+                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
+                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
             </div><!-- /#header -->
             
             <div id="blog-content" data-role="content">
-                
+                <a href="index.html" class="right" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="b">Back</a>
                 
                 <div id="single-data"></div>
 
@@ -121,9 +204,6 @@
                     <h1>{{title}}</h1>
                     {{{content}}}
                 </script>
-
-                <a data-role="button" data-transition="slide" href="#blog-page">Home</a>
-                <a data-role="button" data-transition="slide" href="#strategy-page">Strategy</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer">
@@ -133,8 +213,5 @@
             app.single();
         </script>
         </div><!-- /#blog-page -->
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>

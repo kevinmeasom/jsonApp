@@ -52,10 +52,10 @@ var app = {
 
 
     blog: function(){
-        function getBlogs() {
+        function getBlogs(e) {
             var dfd = $.Deferred();
             $.ajax({
-                url: 'http://linkarati.com/api/get_recent_posts/?count=10&date_format=m/d/Y&callback=?',
+                url: 'http://linkarati.com/api/get_recent_posts/?count=10&page='+e+'&date_format=m/d/Y&callback=?',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data){
@@ -95,6 +95,37 @@ var app = {
                     var strategyData = template(data);
                     $('#strategy-data').append(strategyData);
                     $('#strategy-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
+    philosophy: function(e){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=philosophy&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#philosophy-template").html();
+                    var template = Handlebars.compile(source);
+                    var philosophyData = template(data);
+                    $('#philosophy-data').append(philosophyData);
+                    $('#philosophy-data').trigger('create');
                     dfd.resolve(data);
 
                 },
