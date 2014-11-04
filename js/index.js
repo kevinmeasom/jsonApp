@@ -52,18 +52,18 @@ var app = {
     },
 
 
-    blog: function(){
-        function getBlogs(e) {
+    blog: function(e){
+        function getBlogs() {
             var dfd = $.Deferred();
             $.ajax({
-                url: 'http://linkarati.com/api/get_recent_posts/?count=10&page='+e+'&date_format=m/d/Y&callback=?',
+                url: 'http://linkarati.com/api/get_recent_posts/?page='+e+'&date_format=m/d/Y&callback=?',
                 type: 'GET',
                 dataType: 'json',
                 success: function(data){
                     var source   = $("#blog-template").html();
                     var template = Handlebars.compile(source);
                     var blogData = template(data);
-                    $('#blog-data').html(blogData);
+                    $('#blog-data').append(blogData);
                     $('#blog-data').trigger('create');
                     dfd.resolve(data);
 

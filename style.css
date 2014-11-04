@@ -2,6 +2,7 @@ img { max-width: 100%; }
 h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-family: 'ubuntu',arial, sans-serif;  }
 a { color: #00AFEF; text-decoration: none; }
 header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888; height: 6%; width: 95%; top: 0; }
+.back { position: relative !important; float: right !important; margin: 2px 10px !important; }
 #spacer { height: 7%; width: 100%; }
 .show { display: block !important; }
 .button { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }
