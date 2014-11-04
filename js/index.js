@@ -17,7 +17,8 @@
  * under the License.
  */
 
-
+$.support.cors = true;
+$.mobile.allowCrossDomainPages = true;
 
 var app = {
     // Application Constructor
