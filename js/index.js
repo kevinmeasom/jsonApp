@@ -145,6 +145,99 @@ var app = {
 
         
     },
+    features: function(e){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=features&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#features-template").html();
+                    var template = Handlebars.compile(source);
+                    var featuresData = template(data);
+                    $('#features-data').append(featuresData);
+                    $('#features-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
+    news: function(e){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=news&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#news-template").html();
+                    var template = Handlebars.compile(source);
+                    var newsData = template(data);
+                    $('#news-data').append(newsData);
+                    $('#news-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
+    seo: function(e){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=seo&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#seo-template").html();
+                    var template = Handlebars.compile(source);
+                    var seoData = template(data);
+                    $('#seo-data').append(seoData);
+                    $('#seo-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
     single: function() {
         
             var postDataStorage = localStorage.getItem('postData');
