@@ -13,7 +13,7 @@ jQuery(document).ready(function($){
     });
   });
 
-// SEARCH
+/*** SEARCH
   $(function(){
     $(document).bind('click', function(e) {
       if ($(e.target).is('#search-icon')) {
@@ -25,4 +25,5 @@ jQuery(document).ready(function($){
       }
     });
   });
+***/
 });

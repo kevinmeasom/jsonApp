@@ -12,9 +12,9 @@ header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888;
 .googleplus { width: 72px; }
 .facebook, .twitter { width: 90px; }
 #header { position: fixed; width: 100%; }
-#search-form { position: absolute; right: 0; top: 0; text-align: right; }
-#search-icon { width: 50%; padding: 10px; max-width: 30px; position: relative; }
-.form-group { display: none; }
+/*#search-form { position: absolute; right: 0; top: 0; text-align: right; }*/
+#search-icon { display: none; width: 50%; padding: 10px; max-width: 30px; /*position: relative;*/ float: right; }
+.form-group { /*display: none;*/ }
 #search-form .form-group div { display: inline-block; }
 #search { width: 100%; }
 .submit { display: none; }
@@ -31,6 +31,7 @@ header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888;
 #news { background: url('images/news.png') no-repeat #00AEFE; }
 #seo { background: url('images/seo.png') no-repeat #00AEFE; }
 #subscribe { background: url('images/subscribe.png') no-repeat #00AEFE; }
+#query { background: url('images/search.png') no-repeat #00AEFE; }
 #contact-us { background: url('images/contact.png') no-repeat #00AEFE; }
 #nav { color: #ffffff !important; }
 #nav a { color: #FFFFFF !important; display: block; text-shadow: none !important; }
@@ -44,7 +45,7 @@ header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888;
 #poster { margin-bottom: -3%; color: #003462; font-size: 14px; text-transform: uppercase; }
 #posts { clear: both; }
 .post { clear: both; overflow: auto; margin: 4% 0; border-bottom: solid 2px #888888; }
-.post img { height: auto; float: right; margin: 3%; }
+.post img { height: auto; float: right; margin: 0 3% 3%; width: 40%; }
 .text { padding-top: 1%; }
 .text h2 { color: #00AFEF; cursor: pointer; font-weight: 700; font-size: 18px;  }
 .post-meta { color: #888888; display: block; margin: 2% 0; }

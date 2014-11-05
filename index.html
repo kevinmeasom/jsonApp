@@ -24,6 +24,7 @@
             <div data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -31,20 +32,9 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
-
-                <!-- SEARCH FORM
-                <form id="search-form" role="form" action="index.html#search-body">
-                    <img id="search-icon" class="search" src="images/search.png" />
-                    <div class="form-group">
-                      <input type="search" data-icon="search" data-mini="true" data-theme="d" class="search form-control input-lg" id="search" placeholder="Search Here...">
-                      <!--input type="submit" class="submit" placeholder="Search" data-theme="d" value="Search"-->
-                      <!--a id="search-submit" class="button" href="#search-body">Search</a--
-                    </div>
-                </form>
-                -->
             </div><!-- /#header -->
             
             <div id="blog-content" data-role="content">
@@ -87,11 +77,12 @@
         </div><!-- /#blog-page -->
 
 
-        <div id="strategy-page" data-role="page">
+        <div id="search-page" data-role="page">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -99,7 +90,85 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+            </div><!-- /#header -->
+            
+            <div id="search-content" data-role="content">
+
+                <form id="search-form" role="form" action="search.html">
+                    <img id="search-icon" class="search" src="images/search.png" />
+                    <div class="form-group" data-role="fieldcontain">
+                        <label for="search">Search:</label>
+                        <input type="search" data-icon="search" data-mini="true" data-theme="d" class="search form-control input-lg" id="search" placeholder="Search Here..." value="">
+                        <!-- input type="button" class="submit" placeholder="Search" data-theme="d" value="Search"-->
+                        <!--a id="search-submit" class="button" href="#search-body">Search</a-->
+                    </div>
+                </form>
+                
+                <!--
+                <div id="search-data"></div>
+                    
+
+                <script id="search-template" type="text/x-handlebars-template">
+                    
+                    {{#each posts}}
+                        
+                        <div id="{{id}}" class="home post">
+                            <div class="text">
+                                <h2>{{{title}}}</h2>
+                                <span class="post-meta">{{date}} | {{author.name}}</span>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
+                                <p>{{{excerpt}}}</p>
+                            </div>
+                        </div>
+
+                    {{/each}}
+
+                </script>
+                <a class="button more-search" data-role="button" href="#search-page">Load More</a>
+                -->
+            </div><!-- /#search-content -->
+            
+            <div id="footer" data-role="footer" data-theme="b">
+                <h1> built with phonegap and jquery mobile</h1>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            $('#search-form').on('submit',function(e){
+                $queryTerm = $('#search').val();
+                $queryString = $queryTerm.replace(/\ /g, '+');
+                app.search(1,$queryString);
+                e.preventDefault();
+            });
+
+            /***
+            $m = 1;
+            $('.more-search').on('vclick',function(e){
+                $m++;
+                app.search($m,$queryString);
+                //e.preventDefault();
+            });
+            ***/
+        </script>
+        </div><!-- /#search-page -->
+
+
+        <div id="strategy-page" data-role="page">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
@@ -118,7 +187,7 @@
                             <div class="text">
                                 <h2>{{{title}}}</h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
-                                <img src="{{thumbnail}}"/>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
                             </div>
                         </div>
@@ -149,6 +218,7 @@
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -156,7 +226,7 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
@@ -175,7 +245,7 @@
                             <div class="text">
                                 <h2>{{{title}}}</h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
-                                <img src="{{thumbnail}}"/>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
                             </div>
                         </div>
@@ -200,11 +270,13 @@
         </script>
         </div><!-- /#philosophy-page -->
 
+
         <div id="features-page" data-role="page">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -212,7 +284,7 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
@@ -231,7 +303,7 @@
                             <div class="text">
                                 <h2>{{{title}}}</h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
-                                <img src="{{thumbnail}}"/>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
                             </div>
                         </div>
@@ -255,11 +327,14 @@
             app.features(1);
         </script>
         </div><!-- /#features-page -->
+
+
         <div id="news-page" data-role="page">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -267,7 +342,7 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
@@ -286,7 +361,7 @@
                             <div class="text">
                                 <h2>{{{title}}}</h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
-                                <img src="{{thumbnail}}"/>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
                             </div>
                         </div>
@@ -310,11 +385,14 @@
             app.news(1);
         </script>
         </div><!-- /#news-page -->
+
+
         <div id="seo-page" data-role="page">
             <div data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
@@ -322,7 +400,7 @@
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
                     <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
-                    <li id="subscribe" class="nav-item inline"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
@@ -341,7 +419,7 @@
                             <div class="text">
                                 <h2>{{{title}}}</h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
-                                <img src="{{images.wide-thumbnail}}"/>
+                                <img src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
                             </div>
                         </div>

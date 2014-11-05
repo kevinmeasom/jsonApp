@@ -83,6 +83,37 @@ var app = {
 
         
     },
+    search: function(e,d){
+        function getBlogs() {
+            var dfd = $.Deferred();
+            $.ajax({
+                url: 'http://linkarati.com/api/get_recent_posts/?s='+d+'&page='+e+'&date_format=m/d/Y&callback=?',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data){
+                    var source   = $("#search-template").html();
+                    var template = Handlebars.compile(source);
+                    var searchData = template(data);
+                    $('#search-data').append(searchData);
+                    $('#search-data').trigger('create');
+                    dfd.resolve(data);
+
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+            return dfd.promise();
+        };
+
+        getBlogs().then(function(data){
+            $('#all-posts').on('click','li', function(e){                
+                localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
+            });
+        });
+
+        
+    },
     strategy: function(e){
         function getBlogs() {
             var dfd = $.Deferred();
