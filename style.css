@@ -1,5 +1,5 @@
 img { max-width: 100%; }
-h1, h2, h3, h4, h5, h6 { padding: 0; margin: 0; font-family: 'ubuntu',arial, sans-serif;  }
+h1, h2, h3, h4, h5, h6 { color: #2489ce; padding: 0; margin: 0; font-family: 'ubuntu',arial, sans-serif;  }
 a { color: #00AFEF; text-decoration: none; }
 header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888; height: 6%; width: 95%; top: 0; }
 .back { position: relative !important; float: right !important; margin: 2px 10px !important; }
@@ -54,6 +54,7 @@ header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888;
 #pagination li { background: #00AFEF; color: #FFFFFF; display: inline-block; padding: 1%; margin: 2px; }
 #pagination li:hover { cursor: pointer; text-decoration: underline; }
 a.the+value+of+links { color: #000 !important; }
+#copyright { display: block; text-align: center; font-weight: 100; }
 @media only screen and (max-width: 700px) {
 	.nav-item { /*text-indent: 50px !important;*/ background-size: 30px !important; }
 }
