@@ -76,7 +76,7 @@ var app = {
         };
 
         getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+            $('#all-posts').on('click','.post', function(i){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });

@@ -1,9 +1,15 @@
 jQuery(document).ready(function($){
   $this = $(this);
 
+  $(document).ready(function(){
+    $("*").dblclick(function(e){
+      e.preventDefault();
+    });
+  });
+
 // NAV DROP DOWN
   $(function(){
-    $(document).on('vclick', function(e) {
+    $(document).bind('click',function(e) {
       if(!$(e.target).is('#logo')) {
         $('.nav-wrap').removeClass('show');
       } else {
