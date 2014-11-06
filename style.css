@@ -36,7 +36,7 @@ header { position: fixed; background: #ffffff; border-bottom: solid 2px #888888;
 #nav { color: #ffffff !important; }
 #nav a { color: #FFFFFF !important; display: block; text-shadow: none !important; }
 .nav-wrap { position: fixed; display: none; width: 60%; font-size: 18px; list-style-type: none; padding: 0; margin-top: 0; z-index: 50000 !important; }
-.nav-item { padding: 3% 3% 3% 15%; /*text-indent: 60px;*/ text-shadow: none !important; color: #FFFFFF !important; background: #00AFEF; background-size: 40px !important; background-position-x: 2% !important; background-position-y: 50% !important; border: solid 1px #fff; }
+.nav-item { display: block; padding: 3% 3% 3% 15%; /*text-indent: 60px;*/ text-shadow: none !important; color: #FFFFFF !important; background: #00AFEF; background-size: 40px !important; background-position-x: 2% !important; background-position-y: 50% !important; border: solid 1px #fff; }
 .nav-item:hover { cursor: pointer; }
 .nav-item a { color: #FFFFFF !important; }
 #logo { width: 50%; max-width: 225px; }

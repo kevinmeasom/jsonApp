@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
 
 // NAV DROP DOWN
   $(function(){
-    $(document).bind('click', function(e) {
+    $(document).on('vclick', function(e) {
       if(!$(e.target).is('#logo')) {
         $('.nav-wrap').removeClass('show');
       } else {
