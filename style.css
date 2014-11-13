@@ -12,7 +12,7 @@ a { color: #00AFEF; text-decoration: none; }
 #shareme { margin-top: 10px; z-index: -1; position: relative; }
 .googleplus { width: 72px; }
 .facebook, .twitter { width: 90px; }
-#header { position: fixed; width: 100%; }
+#header { padding-top: 20px; }
 /*#search-form { position: absolute; right: 0; top: 0; text-align: right; }*/
 #search-icon { display: none; width: 50%; padding: 10px; max-width: 30px; /*position: relative;*/ float: right; }
 .form-group { /*display: none;*/ }
