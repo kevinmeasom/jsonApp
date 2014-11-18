@@ -63,10 +63,10 @@ var app = {
                     var source   = $("#blog-template").html();
                     var template = Handlebars.compile(source);
                     var blogData = template(data);
-                    $('#blog-data').append(blogData);
+                    $('.loading').remove();
+                    $('#blog-data').html(blogData);
                     $('#blog-data').trigger('create');
                     dfd.resolve(data);
-
                 },
                 error: function(data){
                     console.log(data);
@@ -76,14 +76,14 @@ var app = {
         };
 
         getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(i){                
+            $('#blog-posts').on('click','.post', function(e){             
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
-            });
+            });     
         });
         
     },
     search: function(e,d){
-        function getBlogs() {
+        function getSearch() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_recent_posts/?s='+d+'&page='+e+'&date_format=m/d/Y&callback=?',
@@ -93,7 +93,8 @@ var app = {
                     var source   = $("#search-template").html();
                     var template = Handlebars.compile(source);
                     var searchData = template(data);
-                    $('#search-data').append(searchData);
+                    $('.loading').remove();
+                    $('#search-data').html(searchData);
                     $('#search-data').trigger('create');
                     dfd.resolve(data);
 
@@ -105,8 +106,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getSearch().then(function(data){
+            $('#search-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -114,7 +115,7 @@ var app = {
         
     },
     strategy: function(e){
-        function getBlogs() {
+        function getStrategy() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=strategy&date_format=m/d/Y&callback=?',
@@ -124,7 +125,8 @@ var app = {
                     var source   = $("#strategy-template").html();
                     var template = Handlebars.compile(source);
                     var strategyData = template(data);
-                    $('#strategy-data').append(strategyData);
+                    $('.loading').remove();
+                    $('#strategy-data').html(strategyData);
                     $('#strategy-data').trigger('create');
                     dfd.resolve(data);
 
@@ -136,8 +138,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getStrategy().then(function(data){
+            $('#strategy-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -145,7 +147,7 @@ var app = {
         
     },
     philosophy: function(e){
-        function getBlogs() {
+        function getPhilosophy() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=philosophy&date_format=m/d/Y&callback=?',
@@ -155,7 +157,8 @@ var app = {
                     var source   = $("#philosophy-template").html();
                     var template = Handlebars.compile(source);
                     var philosophyData = template(data);
-                    $('#philosophy-data').append(philosophyData);
+                    $('.loading').remove();
+                    $('#philosophy-data').html(philosophyData);
                     $('#philosophy-data').trigger('create');
                     dfd.resolve(data);
 
@@ -167,8 +170,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getPhilosophy().then(function(data){
+            $('#philosophy-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -176,7 +179,7 @@ var app = {
         
     },
     features: function(e){
-        function getBlogs() {
+        function getFeatures() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=features&date_format=m/d/Y&callback=?',
@@ -186,7 +189,8 @@ var app = {
                     var source   = $("#features-template").html();
                     var template = Handlebars.compile(source);
                     var featuresData = template(data);
-                    $('#features-data').append(featuresData);
+                    $('.loading').remove();
+                    $('#features-data').html(featuresData);
                     $('#features-data').trigger('create');
                     dfd.resolve(data);
 
@@ -198,8 +202,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getFeatures().then(function(data){
+            $('#features-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -207,7 +211,7 @@ var app = {
         
     },
     news: function(e){
-        function getBlogs() {
+        function getNews() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=news&date_format=m/d/Y&callback=?',
@@ -217,7 +221,8 @@ var app = {
                     var source   = $("#news-template").html();
                     var template = Handlebars.compile(source);
                     var newsData = template(data);
-                    $('#news-data').append(newsData);
+                    $('.loading').remove();
+                    $('#news-data').html(newsData);
                     $('#news-data').trigger('create');
                     dfd.resolve(data);
 
@@ -229,8 +234,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getNews().then(function(data){
+            $('#news-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -238,7 +243,7 @@ var app = {
         
     },
     seo: function(e){
-        function getBlogs() {
+        function getSeo() {
             var dfd = $.Deferred();
             $.ajax({
                 url: 'http://linkarati.com/api/get_category_posts/?count=10&page='+e+'&category_slug=seo&date_format=m/d/Y&callback=?',
@@ -248,7 +253,8 @@ var app = {
                     var source   = $("#seo-template").html();
                     var template = Handlebars.compile(source);
                     var seoData = template(data);
-                    $('#seo-data').append(seoData);
+                    $('.loading').remove();
+                    $('#seo-data').html(seoData);
                     $('#seo-data').trigger('create');
                     dfd.resolve(data);
 
@@ -260,8 +266,8 @@ var app = {
             return dfd.promise();
         };
 
-        getBlogs().then(function(data){
-            $('#all-posts').on('click','.post', function(e){                
+        getSeo().then(function(data){
+            $('#seo-posts').on('click','.post', function(e){                
                 localStorage.setItem('postData', JSON.stringify(data.posts[$(this).index()]));
             });
         });
@@ -269,7 +275,7 @@ var app = {
         
     },
     single: function() {
-        
+
             var postDataStorage = localStorage.getItem('postData');
             var source   = $("#single-template").html();
             var template = Handlebars.compile(source);
@@ -277,4 +283,27 @@ var app = {
             $('#single-data').html(postData);
 
     },
+
+    /***
+    single: function(e) {
+        var dfd = $.Deferred();
+        $.ajax({
+            url: 'http://linkarati.com/api/get_post/?post_id='+e+'&date_format=m/d/Y&callback=?',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data){
+                var source   = $("#single-template").html();
+                var template = Handlebars.compile(source);
+                var postData = template(data);
+                $('#single-data').append(postData);
+                $('#single-data').trigger('create');
+                dfd.resolve(data);
+
+            },
+            error: function(data){
+                console.log(data);
+            }
+        });
+    },
+    ***/
 };

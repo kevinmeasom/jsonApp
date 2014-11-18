@@ -19,6 +19,14 @@ jQuery(document).ready(function($){
     });
   });
 
+  $('.button').bind('click',function(e) {
+    $('#header').after('<img class="loading" src="/images/ajax-loader.gif" />')
+  });
+
+  $('#home').on('click','a',function(){
+    app.blog(1);
+  });
+        
 /*** SEARCH
   $(function(){
     $(document).bind('click', function(e) {

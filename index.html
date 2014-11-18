@@ -43,7 +43,7 @@
 
                 <script id="blog-template" type="text/x-handlebars-template">
 
-                    <div id="all-posts">
+                    <div id="blog-posts">
                     
                     {{#each posts}}
                         
@@ -61,7 +61,7 @@
                     </div>
 
                 </script>
-                <a class="button more-blog" data-role="button" href="#blog-page">Load More</a>
+                <a class="button more-blog" onclick="$.mobile.silentScroll(0)" data-role="button" href="#blog-page">Load More</a>
 
             </div><!-- /#blog-content -->
             
@@ -151,7 +151,7 @@
 
                 <script id="strategy-template" type="text/x-handlebars-template">
                     
-                    <div id="all-posts">
+                    <div id="strategy-posts">
                     
                     {{#each posts}}
                         
@@ -213,7 +213,7 @@
 
                 <script id="philosophy-template" type="text/x-handlebars-template">
                     
-                    <div id="all-posts">
+                    <div id="philosophy-posts">
                     
                     {{#each posts}}
                         
@@ -275,7 +275,7 @@
 
                 <script id="features-template" type="text/x-handlebars-template">
                     
-                    <div id="all-posts">
+                    <div id="features-posts">
                     
                     {{#each posts}}
                         
@@ -337,7 +337,7 @@
 
                 <script id="news-template" type="text/x-handlebars-template">
                     
-                    <div id="all-posts">
+                    <div id="news-posts">
                     
                     {{#each posts}}
                         
@@ -399,13 +399,13 @@
 
                 <script id="seo-template" type="text/x-handlebars-template">
                     
-                    <div id="all-posts">
+                    <div id="seo-posts">
                     
                     {{#each posts}}
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{id}}">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
