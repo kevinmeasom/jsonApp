@@ -9,7 +9,7 @@ a { color: #00AFEF; text-decoration: none; }
 #loading img { padding: 42%; }
 #term-notice { text-transform: capitalize; font-size: 18px; color: #888888; }
 .show { display: block !important; }
-.button { 
+.external { 
 	border: 1px solid #ccc;
 	background: #eee;
 	font-weight: 700;
@@ -27,7 +27,7 @@ a { color: #00AFEF; text-decoration: none; }
 	display: block;
 	text-align: center;
 }
-/***.button { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }***/
+.button { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }
 .buttons .button { display: inline-block; padding: 0; background: transparent; }
 #full-site { display: block; text-align: center; font-size: 18px; }
 #shareme { margin-top: 10px; z-index: -1; position: relative; }
