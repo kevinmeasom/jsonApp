@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="js/css/jquery.mobile-1.3.2.min.css" />
-        <script src="phonegap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script src="js/handlebars.js"></script>
@@ -211,7 +211,7 @@ This is by no means done. If we've learned anything through our years of link bu
 Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory) at ccollins@pageonepower.com.</p>
                     <p>By clicking on the link below you will be taken to the full Linkarati website.</p>
 
-                    <a id="resources-link" class="external" href="#" onclick='openURL("http://linkarati.com/link-building-resources/")'>Take Me To Full Site</a>
+                    <a id="resources-link" class="external" href="#" onclick="window.open('http://linkarati.com/link-building-resources/','_self','location=yes')">Take Me To Full Site</a>
                 </div>
 
             </div><!-- /#blog-content -->
