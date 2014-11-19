@@ -24,7 +24,7 @@
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -86,7 +86,7 @@
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -125,13 +125,115 @@
         </div><!-- /#search-page -->
 
 
+        <div id="about-page" data-role="page">
+            <div id="header" data-role="header" data-position="fixed" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+            </div><!-- /#header -->
+            
+            <div id="about-content" data-role="content">
+                
+                <div id="about-data"></div>
+
+
+                <script id="about-template" type="text/x-handlebars-template">
+
+                    <div id="about-posts">
+                    
+                    {{#each page}}
+                        
+                        <h2>{{{title}}}</h2>
+                        <span class="post-meta">{{date}} | {{author.name}}</span>
+                        <p>{{{content}}}</p>
+
+                    {{/each}}
+
+                    </div>
+
+                </script>
+
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer" data-theme="b">
+                <span id="copyright">&#169; of Linkarati 2014</span>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            app.about();
+        </script>
+        </div><!-- /#about-page -->
+
+
+        <div id="resources-page" data-role="page">
+            <div id="header" data-role="header" data-position="fixed" data-theme="b">
+                <img id="logo" src="images/logo.png" />
+                <ul class="nav-wrap">
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
+                </ul>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+            </div><!-- /#header -->
+            
+            <div id="resources-content" data-role="content">
+                
+                <div id="resources-data">
+                    <h2>Resource Guides</h2>
+                    <p>Here at Linkarati we eat, breathe, and dream link building. We work around the clock to continually produce useful link building content, and share office space with Page One Power, our link building agency brethren.
+
+The fact is link building and SEO are quickly evolving industries. Google's only been around 15 years. Penguin has only been around for two. And yet each has fundamentally changed links on the web.
+
+Since we've invested so much time into learning and sharing everything possible about link building, it only makes sense to make a complete resource page. It's taken many, many hours, but today we're finally ready to release this previously internal resource to the public.
+
+This is by no means done. If we've learned anything through our years of link building it's that there will always be change. We'll continue to update this resource month over month, year over year.
+
+Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory) at ccollins@pageonepower.com.</p>
+                    <p>By clicking on the link below you will be taken to the full Linkarati website.</p>
+
+                    <a id="resources-link" class="button" href="http://linkarati.com/link-building-resources/">Take Me To Full Site</a>
+                </div>
+
+            </div><!-- /#blog-content -->
+            
+            <div id="footer" data-role="footer" data-theme="b">
+                <span id="copyright">&#169; of Linkarati 2014</span>
+            </div><!-- /#footer -->
+        <script type="text/javascript">
+            $('#resources-link').on('click',function(){
+                $(this).on('click').unbind('click');
+            });
+            app.about();
+        </script>
+        </div><!-- /#resources-page -->
+
+
         <div id="strategy-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -169,7 +271,7 @@
                     </div>
 
                 </script>
-                <a class="button more-strategy" data-role="button" href="#strategy-page">Load More</a>
+                <a class="button more-strategy" onclick="$.mobile.silentScroll(0)" data-role="button" href="#strategy-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -193,7 +295,7 @@
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -231,7 +333,7 @@
                     </div>
 
                 </script>
-                <a class="button more-philosophy" data-role="button" href="#philosophy-page">Load More</a>
+                <a class="button more-philosophy" onclick="$.mobile.silentScroll(0)" data-role="button" href="#philosophy-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -255,7 +357,7 @@
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -293,7 +395,7 @@
                     </div>
 
                 </script>
-                <a class="button more-features" data-role="button" href="#features-page">Load More</a>
+                <a class="button more-features" onclick="$.mobile.silentScroll(0)" data-role="button" href="#features-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -317,7 +419,7 @@
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -355,7 +457,7 @@
                     </div>
 
                 </script>
-                <a class="button more-news" data-role="button" href="#news-page">Load More</a>
+                <a class="button more-news" onclick="$.mobile.silentScroll(0)" data-role="button" href="#news-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -379,7 +481,7 @@
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -417,7 +519,7 @@
                     </div>
 
                 </script>
-                <a class="button more-seo" data-role="button" href="#seo-page">Load More</a>
+                <a class="button more-seo" onclick="$.mobile.silentScroll(0)" data-role="button" href="#seo-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">

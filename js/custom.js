@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
   });
 
   $('.button').bind('click',function(e) {
-    $('#header').after('<img class="loading" src="/images/ajax-loader.gif" />')
+    $('#spacer').after('<div id="loading"><img class="loading" src="js/css/images/ajax-loader.gif" /></div>')
   });
 
   $('#home').on('click','a',function(){

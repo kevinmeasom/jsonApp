@@ -63,7 +63,7 @@ var app = {
                     var source   = $("#blog-template").html();
                     var template = Handlebars.compile(source);
                     var blogData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#blog-data').html(blogData);
                     $('#blog-data').trigger('create');
                     dfd.resolve(data);
@@ -83,6 +83,7 @@ var app = {
         
     },
     search: function(e,d){
+        var cStr = d.replace(/\+/g, ' ');
         function getSearch() {
             var dfd = $.Deferred();
             $.ajax({
@@ -93,9 +94,12 @@ var app = {
                     var source   = $("#search-template").html();
                     var template = Handlebars.compile(source);
                     var searchData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#search-data').html(searchData);
                     $('#search-data').trigger('create');
+                    $('#term-notice').html('Search Results For: '+cStr);
+                    $('#term-notice').attr('class',e)
+                    console.log(cStr);
                     dfd.resolve(data);
 
                 },
@@ -125,7 +129,7 @@ var app = {
                     var source   = $("#strategy-template").html();
                     var template = Handlebars.compile(source);
                     var strategyData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#strategy-data').html(strategyData);
                     $('#strategy-data').trigger('create');
                     dfd.resolve(data);
@@ -157,7 +161,7 @@ var app = {
                     var source   = $("#philosophy-template").html();
                     var template = Handlebars.compile(source);
                     var philosophyData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#philosophy-data').html(philosophyData);
                     $('#philosophy-data').trigger('create');
                     dfd.resolve(data);
@@ -189,7 +193,7 @@ var app = {
                     var source   = $("#features-template").html();
                     var template = Handlebars.compile(source);
                     var featuresData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#features-data').html(featuresData);
                     $('#features-data').trigger('create');
                     dfd.resolve(data);
@@ -221,7 +225,7 @@ var app = {
                     var source   = $("#news-template").html();
                     var template = Handlebars.compile(source);
                     var newsData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#news-data').html(newsData);
                     $('#news-data').trigger('create');
                     dfd.resolve(data);
@@ -253,7 +257,7 @@ var app = {
                     var source   = $("#seo-template").html();
                     var template = Handlebars.compile(source);
                     var seoData = template(data);
-                    $('.loading').remove();
+                    $('#loading').remove();
                     $('#seo-data').html(seoData);
                     $('#seo-data').trigger('create');
                     dfd.resolve(data);
@@ -283,7 +287,21 @@ var app = {
             $('#single-data').html(postData);
 
     },
+    about: function(){
 
+        $.ajax({
+            url: 'http://linkarati.com/api/get_page/?page_slug=about&callback=?',
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            success: function(data) {
+              $(data.page).each(function(i,v){
+                $('#about-data').append('<div id="'+v.id+'" class="post fullcontent"><div id="text" class="text"><h2>'+v.title+'</h2><p>'+v.content+'</p></div></div>');
+              });
+            }
+        });
+        
+    },
     /***
     single: function(e) {
         var dfd = $.Deferred();

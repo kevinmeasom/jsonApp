@@ -19,13 +19,13 @@
     </head>
     <body>
     <div id="spacer"></div>
-    <div id="single-page" data-role="page">
+    <div id="single-search-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" src="images/logo.png" />
                 <ul class="nav-wrap">
                     <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page">Home</a></li>
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
@@ -35,15 +35,15 @@
                     <li id="subscribe" class="nav-item"><a data-transition="slide" href="http://linkarati.com/subscribe/">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
-                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+                <a href="index.html" id="single-search-back" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
 
             <div id="blog-content" data-role="content">
                 
-                <div id="single-data"></div>
+                <div id="single-search-data"></div>
                     
 
-                <script id="single-template" type="text/x-handlebars-template">
+                <script id="single-search-template" type="text/x-handlebars-template">
                     <h2>{{{title}}}</h2>
                     <span class="post-meta">{{date}} | {{author.name}}</span>
                     <p>{{{content}}}</p>
