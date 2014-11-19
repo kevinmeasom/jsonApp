@@ -26,11 +26,6 @@ jQuery(document).ready(function($){
   $('#home').on('click','a',function(){
     app.blog(1);
   });
-
-  function openURL(urlString){
-    myURL = encodeURI(urlString);
-    window.open(myURL, '_blank');
-  }
         
 /*** SEARCH
   $(function(){
