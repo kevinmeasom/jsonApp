@@ -29,6 +29,7 @@ a { color: #00AFEF; text-decoration: none; }
 }
 #single-data { width: 100%; }
 #single-data .wp-caption { max-width: 100% !important; }
+#single-data iframe { width: 100%; max-width: 100%; height: auto; }
 .button { padding: 1%; color: #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00afef), color-stop(1, #0694c7) ); background:-moz-linear-gradient( center top, #00afef 5%, #0694c7 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00afef', endColorstr='#0694c7'); background-color:#00afef; }
 .buttons .button { display: inline-block; padding: 0; background: transparent; }
 #full-site { display: block; text-align: center; font-size: 18px; }
