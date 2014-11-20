@@ -292,6 +292,7 @@ var app = {
             var template = Handlebars.compile(source);
             var postData = template(JSON.parse(postDataStorage));    
             $('#single-data').html(postData);
+            $('#single-data a').contents().unwrap();
 
     },
     about: function(){
