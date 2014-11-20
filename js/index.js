@@ -20,6 +20,13 @@
 $.support.cors = true;
 $.mobile.allowCrossDomainPages = true;
 
+document.addEventListener("deviceready", function(e) {
+    window.setTimeout(function() {
+        navigator.splashscreen.hide();
+    },3000);
+            
+}, "false");
+
 var app = {
     // Application Constructor
     initialize: function() {
