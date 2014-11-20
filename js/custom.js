@@ -26,6 +26,8 @@ jQuery(document).ready(function($){
   $('#home').on('click','a',function(){
     app.blog(1);
   });
+
+  $('#single-data a.ui-link').attr('href','');
         
 /*** SEARCH
   $(function(){

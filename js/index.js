@@ -303,7 +303,7 @@ var app = {
             cache: false,
             success: function(data) {
               $(data.page).each(function(i,v){
-                $('#about-data').append('<div id="'+v.id+'" class="post fullcontent"><div id="text" class="text"><h2>'+v.title+'</h2><p>'+v.content+'</p></div></div>');
+                $('#about-data').html('<div id="'+v.id+'" class="post fullcontent"><div id="text" class="text"><h2>'+v.title+'</h2><p>'+v.content+'</p></div></div>');
               });
             }
         });
