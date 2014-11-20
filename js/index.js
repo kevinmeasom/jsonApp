@@ -310,6 +310,21 @@ var app = {
         });
         
     },
+    contact: function(){
+
+        $.ajax({
+            url: 'http://linkarati.com/api/get_page/?page_slug=contact-us&callback=?',
+            dataType: 'json',
+            type: 'get',
+            cache: false,
+            success: function(data) {
+              $(data.page).each(function(i,v){
+                $('#contact-data').html('<div id="'+v.id+'" class="post fullcontent"><div id="text" class="text"><h2>'+v.title+'</h2><p>'+v.content+'</p></div></div>');
+              });
+            }
+        });
+        
+    },
     /***
     single: function(e) {
         var dfd = $.Deferred();
