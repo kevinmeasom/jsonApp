@@ -23,7 +23,7 @@ $.mobile.allowCrossDomainPages = true;
 document.addEventListener("deviceready", function(e) {
     window.setTimeout(function() {
         navigator.splashscreen.hide();
-    },3000);
+    },5000);
             
 }, "false");
 
