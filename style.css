@@ -81,6 +81,7 @@ a { color: #00AFEF; text-decoration: none; }
 #pagination li:hover { cursor: pointer; text-decoration: underline; }
 a.the+value+of+links { color: #000 !important; }
 #copyright { display: block; text-align: center; font-weight: 100; }
+.ui-icon { background-color: #00AFEF !important; }
 
 .ui-icon .ui-icon-arrow-u .ui-icon-shadow { background-position: 0px !important; background-size: 185% !important; }
 
