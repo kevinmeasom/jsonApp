@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 // NAV DROP DOWN
   $(function(){
     $(document).bind('click',function(e) {
-      if(!$(e.target).is('#logo')) {
+      if(!$(e.target).is('#mobile-nav')) {
         $('.nav-wrap').removeClass('show');
       } else {
         $('.nav-wrap').toggleClass('show');
