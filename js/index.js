@@ -27,6 +27,13 @@ document.addEventListener("deviceready", function(e) {
             
 }, "false");
 
+var gaPlugin;
+
+function onDeviceReady() {
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, "UA-21302636-1", 10);
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
