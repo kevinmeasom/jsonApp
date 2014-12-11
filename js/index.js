@@ -31,7 +31,7 @@ var gaPlugin;
 
 function onDeviceReady() {
     gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(successHandler, errorHandler, "UA-21302636-1", 10);
+    gaPlugin.init(successHandler, errorHandler, "UA-47351417-1", 10);
 }
 
 var app = {
