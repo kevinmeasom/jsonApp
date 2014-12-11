@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "linkarati.com"
-        version   = "1.0.3">
+        version   = "1.0.4">
 
     <name>Linkarati Blog App</name>
 
@@ -62,7 +62,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <!-- gap:plugin name="com.adobe.plugins.gaplugin" / -->
+    <gap:plugin name="com.adobe.plugins.gaplugin" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -106,7 +106,7 @@
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"              gap:platform="winphone" />
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>102</string>
+    <string>104</string>
     </gap:config-file>
 
     
