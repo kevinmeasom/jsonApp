@@ -12,13 +12,14 @@
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/tracking.js"></script>
         <title>Linkarati</title>
 
         <script type="text/javascript">
             app.initialize();
         </script>
     </head>
-    <body>
+    <body onload="initialize();" onunload="goingAway();">
     <div id="spacer"></div>
         <div id="blog-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
