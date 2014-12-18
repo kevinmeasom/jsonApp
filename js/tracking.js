@@ -6,7 +6,7 @@ function gaInit() {
 
 function onDeviceReady() {
 	gaPlugin = window.plugins.gaPlugin;
-	gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-47351417-3", 10);
+	gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-47351417-4", 10);
 }
 
 function nativePluginResultHandler (result) {
