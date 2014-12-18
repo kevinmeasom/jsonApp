@@ -29,39 +29,39 @@ function VariableButtonClicked() {
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function query(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Home");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 2, "query");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function about(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 2, "about");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 3, "about");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function resources(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 3, "resources");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 4, "resources");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function strategy(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 4, "strategy");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 5, "strategy");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function philosophy(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 5, "philosophy");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 6, "philosophy");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function features(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 6, "features");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 7, "features");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function news(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 7, "news");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 8, "news");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function seo(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 8, "seo");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 9, "seo");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	function contact(){
-		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 9, "contact");
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 10, "contact");
 		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
 	}
 	// Set a dimension based on index and value. Make sure you have added a dimension in the GA dashboard to the
