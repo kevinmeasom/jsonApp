@@ -24,13 +24,53 @@ function TrackButtonClicked() {
 }
 
 function VariableButtonClicked() {
+	function home(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Home");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function query(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Home");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function about(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 2, "about");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function resources(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 3, "resources");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function strategy(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 4, "strategy");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function philosophy(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 5, "philosophy");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function features(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 6, "features");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function news(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 7, "news");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function seo(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 8, "seo");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
+	function contact(){
+		gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 9, "contact");
+		gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "Page View", 1);
+	}
 	// Set a dimension based on index and value. Make sure you have added a dimension in the GA dashboard to the
 	// default property for the passed in index, and your desired scope. GA allows up to 20 dimensions for a free account
-	gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Purple");
+	//gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Purple");
 	// dimensions are are passed to the next event sent to GA. go ahead and fire off an event with the label (key) of your choice
 	// In this example, the label for custom dimension 1 will show up in the dashboard as "favoriteColor". This is much more efficent
 	// than the old custom variable method introduced in V1, (plus you get 20 free dimensions vs 5 free custom variables)
-	gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "favoriteColor", 1);
+	//gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "favoriteColor", 1);
 }
 
 function PageButtonClicked() {
