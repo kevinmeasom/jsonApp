@@ -27,7 +27,7 @@ document.addEventListener("deviceready", function(e) {
             
 }, "false");
 
-
+var gaPlugin;
 
 var app = {
     // Application Constructor
@@ -47,9 +47,6 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-
-        gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(successHandler, errorHandler, "UA-47351417-3", 10);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
