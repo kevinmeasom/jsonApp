@@ -12,14 +12,14 @@
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
-        <script src="js/tracking.js"></script>
+
         <title>Linkarati</title>
 
         <script type="text/javascript">
             app.initialize();
         </script>
     </head>
-    <body onload="gaInit();" onunload="goingAway();">
+    <body>
     <div id="spacer"></div>
         <div id="blog-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
@@ -29,7 +29,7 @@
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="VariableButtonClicked.strategy();">Strategy</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
@@ -598,5 +598,23 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
             app.contact();
         </script>
         </div><!-- /#contact-page -->
+
+    <script src="GAPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8"> 
+        // Setting up Google Analytics variables
+        var myAnalyticsAccount = "UA-57802234-1";
+        var gaPlugin;
+        
+        // Google Analytics Error Handlyer
+        function nativePluginErrorHandler(result) {
+            alert('errorHandler: '+result);
+        }
+        
+          // Google Analytics Success Handler     
+        function nativePluginResultHandler(result) {
+            alert('successHandler: '+result);
+        }    
+        
+    </script> 
     </body>
 </html>

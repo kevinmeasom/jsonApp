@@ -11,14 +11,14 @@
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
-        <script src="js/tracking.js"></script>
+
         <title>Linkarati</title>
 
         <script type="text/javascript">
             app.initialize();
         </script>
     </head>
-    <body onload="gaInit();" onunload="goingAway();">
+    <body>
     <div id="spacer"></div>
     <div id="search-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
@@ -92,5 +92,22 @@
             
         </script>
         </div><!-- /#search-page -->
+    <script src="GAPlugin.js"></script>
+    <script type="text/javascript" charset="utf-8"> 
+        // Setting up Google Analytics variables
+        var myAnalyticsAccount = "UA-57802234-1";
+        var gaPlugin;
+        
+        // Google Analytics Error Handlyer
+        function nativePluginErrorHandler(result) {
+            alert('errorHandler: '+result);
+        }
+        
+          // Google Analytics Success Handler     
+        function nativePluginResultHandler(result) {
+            alert('successHandler: '+result);
+        }    
+        
+    </script> 
      </body>
 </html>

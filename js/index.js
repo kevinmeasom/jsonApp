@@ -57,6 +57,11 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
+        // Initializing Google Analytics 
+        gaPlugin = window.plugins.gaPlugin;  
+        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, myAnalyticsAccount, 10);
+        gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/index");
+
         console.log('Received Event: ' + id);
     },
 
