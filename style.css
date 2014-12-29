@@ -98,6 +98,16 @@ a.the+value+of+links { color: #000 !important; }
 		background-position: -32px !important;
 		background-size: 50px !important;
 	}
+	.ui-icon-action {
+		background-image: url('js/css/images/share.png') !important;
+		background-position: 5px 3px !important;
+		background-size: 75% !important;
+		width: 30px !important;
+		height: 30px !important;
+		top: 3px !important;
+		margin-top: 0 !important;
+		border-radius: 100% !important;
+	}
 }
 
 @media only screen and (max-width: 700px) {

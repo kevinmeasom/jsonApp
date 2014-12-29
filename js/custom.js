@@ -1,6 +1,8 @@
 jQuery(document).ready(function($){
   $this = $(this);
 
+  window.plugin.statusbarOverlay.hide();
+
   $(document).ready(function(){
     $("*").dblclick(function(e){
       e.preventDefault();
