@@ -20,6 +20,16 @@
 $.support.cors = true;
 $.mobile.allowCrossDomainPages = true;
 
+$(document).on('click', 'a[href^=http], a[href^=https]', function(e){
+
+    e.preventDefault();
+    var $this = $(this); 
+    var target = $this.data('inAppBrowser') || '_blank';
+
+    window.open($this.attr('href'), target);
+
+});
+
 document.addEventListener("deviceready", function(e) {
     window.plugin.statusbarOverlay.hide();
     window.setTimeout(function() {
