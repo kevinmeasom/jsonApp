@@ -21,6 +21,7 @@ $.support.cors = true;
 $.mobile.allowCrossDomainPages = true;
 
 document.addEventListener("deviceready", function(e) {
+    window.plugin.statusbarOverlay.hide();
     window.setTimeout(function() {
         navigator.splashscreen.hide();
     },5000);
