@@ -1,5 +1,6 @@
 document.addEventListener("deviceready", init, false);
 var myAnalyticsAccount = "UA-57802234-1";
+var gaPlugin;
 
 function errorHandler(e) {
   //Lame - do nothing	
