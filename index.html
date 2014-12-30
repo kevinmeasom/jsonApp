@@ -13,17 +13,32 @@
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
         <script src="GAPlugin.js"></script>
-        <script src="js/google-analytics.js"></script>
+        <!--script src="js/google-analytics.js"></script-->
 
         <title>Linkarati</title>
 
         <script type="text/javascript">
+
+            // Setting up Google Analytics variables
+            var myAnalyticsAccount = "UA-57802234-1";
+            var gaPlugin;
+            
+            // Google Analytics Error Handlyer
+            function nativePluginErrorHandler(result) {
+                alert('errorHandler: '+result);
+            }
+            
+              // Google Analytics Success Handler     
+            function nativePluginResultHandler(result) {
+                alert('successHandler: '+result);
+            }
+
             app.initialize();
         </script>
     </head>
     <body>
     <div id="spacer"></div>
-        <div id="blog-page" data-role="page" onload="initialize();" onunload="goingAway();">
+        <div id="blog-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
@@ -85,7 +100,7 @@
         </div><!-- /#blog-page -->
 
 
-        <div id="search-page" data-role="page" onload="initialize();" onunload="goingAway();">
+        <div id="search-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
@@ -102,7 +117,7 @@
                     <li id="subscribe" class="nav-item"><a href="#" onclick="window.open('http://linkarati.com/subscribe/','_system','location=yes')">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
-                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c" onclick="BackButtonClicked();">Back</a>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
             
             <div id="search-content" data-role="content">
