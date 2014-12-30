@@ -23,6 +23,7 @@ function nativePluginErrorHandler (error) {
 
 function BackButtonClicked() {
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back", 1);
+    alert('clicked');
 }
 
 function VariableButtonClicked() {
