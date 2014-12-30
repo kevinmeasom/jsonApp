@@ -19,18 +19,49 @@
 
         <script type="text/javascript">
 
-            // Setting up Google Analytics variables
-            var myAnalyticsAccount = "UA-57802234-1";
             var gaPlugin;
-            
-            // Google Analytics Error Handlyer
-            function nativePluginErrorHandler(result) {
-                alert('errorHandler: '+result);
+        
+            function initialize() {
+                document.addEventListener("deviceready", onDeviceReady, true);
             }
-            
-              // Google Analytics Success Handler     
-            function nativePluginResultHandler(result) {
-                alert('successHandler: '+result);
+
+            function onDeviceReady() {
+                gaPlugin = window.plugins.gaPlugin;
+            }
+
+            function permissionCallback (button) {
+                    gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-57802234-1", 10);
+            }
+            function nativePluginResultHandler (result) {
+                alert('nativePluginResultHandler - '+result);
+                console.log('nativePluginResultHandler: '+result);
+            }
+
+            function nativePluginErrorHandler (error) {
+                alert('nativePluginErrorHandler - '+error);
+                console.log('nativePluginErrorHandler: '+error);
+            }
+
+            function BackButtonClicked() {
+                gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back");
+            }
+
+            function VariableButtonClicked() {
+                // Set a dimension based on index and value. Make sure you have added a dimension in the GA dashboard to the
+                // default property for the passed in index, and your desired scope. GA allows up to 20 dimensions for a free account
+                gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Purple");
+                // dimensions are are passed to the next event sent to GA. go ahead and fire off an event with the label (key) of your choice
+                // In this example, the label for custom dimension 1 will show up in the dashboard as "favoriteColor". This is much more efficent
+                // than the old custom variable method introduced in V1, (plus you get 20 free dimensions vs 5 free custom variables)
+                gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "favoriteColor", 1);
+            }
+
+            function PageButtonClicked() {
+                gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
+            }
+
+            function goingAway() {
+                gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
             }
 
             app.initialize();
@@ -38,7 +69,7 @@
     </head>
     <body>
     <div id="spacer"></div>
-        <div id="blog-page" data-role="page">
+        <div id="blog-page" data-role="page" onload="initialize();" onunload="goingAway();">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
@@ -46,7 +77,7 @@
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
                     <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="BackButtonClicked();">Strategy</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
                     <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page">Features</a></li>
                     <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page">News</a></li>
@@ -100,7 +131,7 @@
         </div><!-- /#blog-page -->
 
 
-        <div id="search-page" data-role="page">
+        <div id="search-page" data-role="page" onload="initialize();" onunload="goingAway();">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
@@ -117,7 +148,7 @@
                     <li id="subscribe" class="nav-item"><a href="#" onclick="window.open('http://linkarati.com/subscribe/','_system','location=yes')">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
-                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c" onclick="BackButtonClicked();">Back</a>
             </div><!-- /#header -->
             
             <div id="search-content" data-role="content">

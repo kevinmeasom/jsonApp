@@ -67,14 +67,6 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-
-        // Initializing Google Analytics 
-        gaPlugin = window.plugins.gaPlugin;  
-        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, myAnalyticsAccount, 10);
-        function BackButtonClicked() {
-            gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back", 1);
-        }
-        gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "/index.html");
     },
 
 
