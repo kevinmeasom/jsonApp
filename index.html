@@ -12,6 +12,7 @@
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/ga.js"></script>
 
         <title>Linkarati</title>
 
@@ -52,7 +53,7 @@
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}">{{{title}}}</a></h2>
+                                <h2><a id="{{id}}" class="page-link" data-transition="slide" href="single.html?{{@index}}">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -598,23 +599,5 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
             app.contact();
         </script>
         </div><!-- /#contact-page -->
-
-    <script src="GAPlugin.js"></script>
-    <script type="text/javascript" charset="utf-8"> 
-        // Setting up Google Analytics variables
-        var myAnalyticsAccount = "UA-57802234-1";
-        var gaPlugin;
-        
-        // Google Analytics Error Handlyer
-        function nativePluginErrorHandler(result) {
-            alert('errorHandler: '+result);
-        }
-        
-          // Google Analytics Success Handler     
-        function nativePluginResultHandler(result) {
-            alert('successHandler: '+result);
-        }    
-        
-    </script> 
     </body>
 </html>
