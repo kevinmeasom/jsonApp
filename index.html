@@ -40,7 +40,7 @@
                 console.log('nativePluginErrorHandler: '+error);
             }
             
-            function TrackButtonClicked() {
+            function BackButtonClicked() {
                 gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back", 1);
             }
         
@@ -151,7 +151,7 @@
                     <li id="subscribe" class="nav-item"><a href="#" onclick="window.open('http://linkarati.com/subscribe/','_system','location=yes')">Subscribe</a></li>
                     <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page">Contact Us</a></li>
                 </ul>
-                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
+                <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c" onclick="BackButtonClicked();">Back</a>
             </div><!-- /#header -->
             
             <div id="search-content" data-role="content">
