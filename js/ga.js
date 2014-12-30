@@ -1,9 +1,11 @@
 document.addEventListener("deviceready", init, false);
 var myAnalyticsAccount = "UA-57802234-1";
- 
+
 function errorHandler(e) {
   //Lame - do nothing	
 	alert(e.toString());
+
+	console.log(e.toString());
 }
  
 function init() {

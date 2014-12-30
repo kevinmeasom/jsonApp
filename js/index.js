@@ -38,8 +38,6 @@ document.addEventListener("deviceready", function(e) {
             
 }, "false");
 
-var gaPlugin;
-
 var app = {
     // Application Constructor
     initialize: function() {
