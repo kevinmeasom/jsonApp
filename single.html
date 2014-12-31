@@ -16,44 +16,12 @@
         <title>Linkarati</title>
 
         <script type="text/javascript">
-           
-            var gaPlugin;
-
-            gaInit: function() {
-                gaPlugin.init(gaSuccessConnect, gaFail, "UA-57802234-1", 10);
-            },
-
-            gaSuccess: function() {
-                alert('Successfully connected to Google Analytics');
-            },
-
-            gaSuccessConnect: function() {
-                alert('Successfully initiated connection to Google Analytics');
-                gaTrackPage();
-            },
-
-            gaFail: function() {
-                alert("Failed to connect to Google Analytics");
-            },
-
-            gaTrackPage: function() {
-                gaPlugin.trackPage(gaSuccess, gaFail, "index.html");
-                console.log('Tracking index');
-            },
-
-            gaTrackPageView: function(page) {
-                var index = "index.html";
-                var trackpage = index.concat(page);
-                console.log('Tracking ' + page);
-                gaPlugin.trackPage(gaSuccess, gaFail, trackpage);
-            }
-
             app.initialize();
 
             //$('#single-data a').attr('href','');
         </script>
     </head>
-    <body>
+    <body onload="initialize();" onunload="goingAway();">
     <div id="spacer"></div>
     <div id="single-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
