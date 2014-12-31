@@ -18,48 +18,34 @@
         <script type="text/javascript">
 
             var gaPlugin;
-        
-            function initialize() {
-                document.addEventListener("deviceready", onDeviceReady, true);
-            }
 
-            function onDeviceReady() {
-                gaPlugin = window.plugins.gaPlugin;
-            }
+            gaInit: function() {
+                gaPlugin.init(gaSuccessConnect, gaFail, "UA-57802234-1", 10);
+            },
 
-            function permissionCallback (button) {
-                    gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-57802234-1", 10);
-            }
-            function nativePluginResultHandler (result) {
-                alert('nativePluginResultHandler - '+result);
-                console.log('nativePluginResultHandler: '+result);
-            }
+            gaSuccess: function() {
+                console.log('Successfully connected to Google Analytics');
+            },
 
-            function nativePluginErrorHandler (error) {
-                alert('nativePluginErrorHandler - '+error);
-                console.log('nativePluginErrorHandler: '+error);
-            }
+            gaSuccessConnect: function() {
+                console.log('Successfully initiated connection to Google Analytics');
+                gaTrackPage();
+            },
 
-            function BackButtonClicked() {
-                gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back");
-            }
+            gaFail: function() {
+                console.warn("Failed to connect to Google Analytics");
+            },
 
-            function VariableButtonClicked() {
-                // Set a dimension based on index and value. Make sure you have added a dimension in the GA dashboard to the
-                // default property for the passed in index, and your desired scope. GA allows up to 20 dimensions for a free account
-                gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, 1, "Purple");
-                // dimensions are are passed to the next event sent to GA. go ahead and fire off an event with the label (key) of your choice
-                // In this example, the label for custom dimension 1 will show up in the dashboard as "favoriteColor". This is much more efficent
-                // than the old custom variable method introduced in V1, (plus you get 20 free dimensions vs 5 free custom variables)
-                gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "event with variable", "set variable", "favoriteColor", 1);
-            }
+            gaTrackPage: function() {
+                gaPlugin.trackPage(gaSuccess, gaFail, "index.html");
+                console.log('Tracking index');
+            },
 
-            function PageButtonClicked() {
-                gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
-            }
-
-            function goingAway() {
-                gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
+            gaTrackPageView: function(page) {
+                var index = "index.html";
+                var trackpage = index.concat(page);
+                console.log('Tracking ' + page);
+                gaPlugin.trackPage(gaSuccess, gaFail, trackpage);
             }
 
             app.initialize();
@@ -67,7 +53,7 @@
     </head>
     <body>
     <div id="spacer"></div>
-    <div id="single-search-page" data-role="page"  onload="initialize();" onunload="goingAway();">
+    <div id="single-search-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
