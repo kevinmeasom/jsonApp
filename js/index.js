@@ -67,6 +67,11 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+
+        window.analytics.startTrackerWithId('UA-57802234-1');
+        //window.analytics.trackEvent('Category', 'Action', 'Label', Value)
+
     },
 
 
