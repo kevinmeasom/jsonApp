@@ -1,5 +1,5 @@
 var gaPlugin;
-var pageLink = document.getElementById();
+var pageLink = document.getElementById('id');
         
 function initialize() {
     document.addEventListener("deviceready", onDeviceReady, true);
@@ -22,7 +22,7 @@ function nativePluginErrorHandler (error) {
 
 function backTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", document.getElementById(), 1);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", pageLink.id, 1);
     alert('Button Tracked');
   }    
 }
