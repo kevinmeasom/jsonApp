@@ -22,12 +22,14 @@ function nativePluginErrorHandler (error) {
 function backTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back", 1);
+    alert('Button Tracked');
   }    
 }
 
 function homeTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
+    alert('Page tracked');
   }    
 }
 
