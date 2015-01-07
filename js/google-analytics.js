@@ -93,6 +93,12 @@ function loadTracker() {
   }    
 }
 
+function singleTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "singel.html");
+    alert('Single tracked');
+  }    
+}
 
 
 function goingAway() {
