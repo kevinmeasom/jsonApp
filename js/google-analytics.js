@@ -20,13 +20,13 @@ function nativePluginErrorHandler (error) {
 }
 
 function backTracker() {
-  if(localStorage.trackpermission==="trackon" && typeof gaPlugin !== "undefined"){
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Back", 1);
   }    
 }
 
 function homeTracker() {
-  if(localStorage.trackpermission==="trackon" && typeof gaPlugin !== "undefined"){
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
   }    
 }
