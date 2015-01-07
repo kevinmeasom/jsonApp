@@ -11,8 +11,7 @@
         <script src="js/handlebars.js"></script>
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
-        <!--script src="GAPlugin.js"></script-->
-        <!--script src="js/google-analytics.js"></script-->
+        <script src="js/google-analytics.js"></script>
 
         <title>Linkarati</title>
 
@@ -20,7 +19,7 @@
             app.initialize();
         </script>
     </head>
-    <body>
+    <body onload="initialize();" onunload="goingAway();">
     <div id="spacer"></div>
     <div id="search-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
