@@ -27,7 +27,7 @@ function homeTracker() {
 }
 function queryTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Search Page", 1);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", jQuery(this).attr('id'), 1);
     alert('Button Tracked');
   }    
 }
