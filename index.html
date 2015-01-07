@@ -13,7 +13,7 @@
         <script src="js/index.js"></script>
         <script src="js/custom.js"></script>
         <script src="GAPlugin.js"></script>
-        <!--script src="js/google-analytics.js"></script-->
+        <script src="js/google-analytics.js"></script>
 
         <title>Linkarati</title>
 
@@ -21,30 +21,15 @@
             app.initialize();
         </script>
     </head>
-    <body>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','gaU');
-        gaU('create','UA-47351417-5',{'storage':'none','clientId':device.uuid});
-        gaU('set','checkProtocolTask',null);
-        gaU('set','anonymizeIp',true);
-        gaU('set','forceSSL',true);
-        gaU('send','pageview',{'title':'I heart Cordova','page':'/cordova'});
-        gaU('send','event',{'eventCategory':'My_Category','eventAction':'My_Action','eventLabel':'Event_Label','eventValue':11});
-    </script>
-
-
+    <body onload="initialize();" onunload="goingAway();">
     <div id="spacer"></div>
         <div id="blog-page" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page">About Us</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="backTracker();">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="backTracker();">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page">Philosophy</a></li>
