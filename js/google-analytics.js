@@ -1,5 +1,4 @@
 var gaPlugin;
-var pageLink = document.getElementById('id');
         
 function initialize() {
     document.addEventListener("deviceready", onDeviceReady, true);
@@ -20,9 +19,69 @@ function nativePluginErrorHandler (error) {
     console.log('nativePluginErrorHandler: '+error);
 }
 
-function backTracker() {
+function homeTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", pageLink.id, 1);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Home Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function queryTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Search Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function aboutTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "About Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function resourcesTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Resources Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function strategyTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Strategy Paqe", 1);
+    alert('Button Tracked');
+  }    
+}
+function philosophyTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Philosophy Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function featuresTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Features Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function newsTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "News Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function seoTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "SEO Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function subscribeTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Subscribe Page", 1);
+    alert('Button Tracked');
+  }    
+}
+function contactTracker() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Contact Page", 1);
     alert('Button Tracked');
   }    
 }
