@@ -88,10 +88,9 @@ function contactTracker() {
   }    
 }
 
-function singleTracker() {
+function singleTracker(postNum) {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    var singlePost = jQuery('#single-data h2').attr('id');
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, singlePost);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, postNum);
     alert('Single tracked');
   }    
 }

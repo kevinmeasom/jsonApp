@@ -57,7 +57,7 @@
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker({{{title}}});">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
