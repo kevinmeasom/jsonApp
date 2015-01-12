@@ -52,7 +52,7 @@
 
                 <script id="single-template" type="text/x-handlebars-template">
                     
-                    <h2>{{{title}}}</h2>
+                    <h2 id="{{id}}">{{{title}}}</h2>
                     <span class="post-meta">{{date}} | {{author.name}}</span>
                     <a data-role="button" data-icon="action" data-theme="c" onclick="window.plugins.socialsharing.share('{{{title}}}', '{{{title}}}', '{{{thumbnail_images.wide-thumbnail.url}}}', '{{{url}}}')">Share</a>
                     <p>{{{content}}}</p>

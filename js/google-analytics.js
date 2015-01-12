@@ -90,7 +90,8 @@ function contactTracker() {
 
 function singleTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "singel.html");
+    var singlePost = jQuery('#single-data h2').attr('id');
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, singlePost);
     alert('Single tracked');
   }    
 }
