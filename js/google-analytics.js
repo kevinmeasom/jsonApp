@@ -88,7 +88,7 @@ function contactTracker() {
 
 function loadTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, filename);
     alert('Page tracked');
   }    
 }
