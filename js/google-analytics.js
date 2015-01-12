@@ -7,6 +7,7 @@ function initialize() {
 function onDeviceReady() {
     gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-57802234-1", 10);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
 }
 
 function nativePluginResultHandler (result) {
@@ -21,14 +22,14 @@ function nativePluginErrorHandler (error) {
 
 function homeTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Home Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
     alert('Button Tracked');
   }    
 }
 function queryTracker() {
   var thisID = jQuery(this).attr('id');
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", thisID, 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#search-page");
     alert('Button Tracked');
   }    
 }
@@ -84,20 +85,6 @@ function contactTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Contact Page", 1);
     alert('Button Tracked');
-  }    
-}
-
-function loadTracker() {
-  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
-    alert('Page tracked');
-  }    
-}
-
-function searchPage() {
-  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#search-page");
-    alert('Page tracked');
   }    
 }
 
