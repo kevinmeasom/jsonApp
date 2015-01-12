@@ -94,6 +94,13 @@ function loadTracker() {
   }    
 }
 
+function searchPage() {
+  if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#search-page");
+    alert('Page tracked');
+  }    
+}
+
 function singleTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
     gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "singel.html");

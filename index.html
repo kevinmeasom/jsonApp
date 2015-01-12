@@ -21,9 +21,9 @@
             app.initialize();
         </script>
     </head>
-    <body onload="initialize(); loadTracker();" onunload="goingAway();">
+    <body onload="initialize();" onunload="goingAway();">
     <div id="spacer"></div>
-        <div id="blog-page" data-role="page">
+        <div id="blog-page" onload="loadTracker();" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
@@ -85,7 +85,7 @@
         </div><!-- /#blog-page -->
 
 
-        <div id="search-page" data-role="page">
+        <div id="search-page" onload="searchPage();" data-role="page">
             <div id="header" data-role="header" data-position="fixed" data-theme="b">
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
