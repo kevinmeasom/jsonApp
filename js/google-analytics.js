@@ -77,13 +77,13 @@ function seoTracker() {
 }
 function subscribeTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#subscribe-page");
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "#subscribe-page");
     alert('Button Tracked');
   }    
 }
 function contactTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#contact-page");
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "#contact-page");
     alert('Button Tracked');
   }    
 }
