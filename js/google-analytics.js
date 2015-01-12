@@ -7,6 +7,8 @@ function initialize() {
 function onDeviceReady() {
     gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-57802234-1", 10);
+
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html");
 }
 
 function nativePluginResultHandler (result) {
