@@ -28,8 +28,9 @@ function homeTracker() {
   }    
 }
 function queryTracker() {
+  var thisID = jQuery(this).attr('id');
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", jQuery(this).attr('id'), 1);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", thisID, 1);
     alert('Button Tracked');
   }    
 }
