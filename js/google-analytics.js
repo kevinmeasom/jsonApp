@@ -35,55 +35,55 @@ function queryTracker() {
 }
 function aboutTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "About Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#about-page");
     alert('Button Tracked');
   }    
 }
 function resourcesTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Resources Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#resources-page");
     alert('Button Tracked');
   }    
 }
 function strategyTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Strategy Paqe", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#strategy-page");
     alert('Button Tracked');
   }    
 }
 function philosophyTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Philosophy Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#philosophy-page");
     alert('Button Tracked');
   }    
 }
 function featuresTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Features Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#features-page");
     alert('Button Tracked');
   }    
 }
 function newsTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "News Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#news-page");
     alert('Button Tracked');
   }    
 }
 function seoTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "SEO Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#seo-page");
     alert('Button Tracked');
   }    
 }
 function subscribeTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Subscribe Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#subscribe-page");
     alert('Button Tracked');
   }    
 }
 function contactTracker() {
   if(/***localStorage.trackpermission==="trackon" && ***/typeof gaPlugin !== "undefined"){
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Menu", "Click", "Contact Page", 1);
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "index.html#contact-page");
     alert('Button Tracked');
   }    
 }
