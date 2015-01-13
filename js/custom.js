@@ -1,7 +1,5 @@
 jQuery(document).ready(function($){
 
-  $.getScript("js/google-analytics.js");
-
   $this = $(this);
 
   $(document).ready(function(){
@@ -28,16 +26,6 @@ jQuery(document).ready(function($){
 
   $('#home').on('click','a',function(){
     app.blog(1);
-  });
-
-  $(function(){
-    $('a [class|="more-"]').click(function(){
-      $itemClass = $this.attr('href').val();
-      $.mobile.silentScroll(0);
-      $.loadMore($itemClass);
-
-      alert($itemClass);
-    });
   });
         
 /*** SEARCH

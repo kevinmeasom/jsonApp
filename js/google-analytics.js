@@ -97,7 +97,7 @@ function singleTracker(postNum) {
 
 function loadMore(page){
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "LoadMore - "+page);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", page);
   }
 }
 
