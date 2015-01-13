@@ -29,15 +29,15 @@
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="subscribeTracker($(this).attr('id'))">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
             </div><!-- /#header -->
             
@@ -54,7 +54,7 @@
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a id="{{id}}" class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a id="{{id}}" class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -66,7 +66,7 @@
                     </div>
 
                 </script>
-                <a id="more-blog" class="button more-blog" data-role="button" href="#blog-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-blog" class="button more-blog" data-role="button" href="#blog-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
 
             </div><!-- /#blog-content -->
             
@@ -90,17 +90,17 @@
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -138,17 +138,17 @@
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -190,17 +190,17 @@
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -220,7 +220,7 @@ This is by no means done. If we've learned anything through our years of link bu
 Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory) at ccollins@pageonepower.com.</p>
                     <p>By clicking on the link below you will be taken to the full Linkarati website.</p>
 
-                    <a id="resources-link" class="external" href="http://linkarati.com/link-building-resources/" onclick="rgClick();">Take Me To Full Site</a>
+                    <a id="resources-link" class="external" href="http://linkarati.com/link-building-resources/" onclick="buttonClick($(this).attr('id'));">Take Me To Full Site</a>
                 </div>
 
             </div><!-- /#blog-content -->
@@ -242,17 +242,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -270,7 +270,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -282,7 +282,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a id="more-strategy" class="button more-strategy" data-role="button" href="#strategy-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-strategy" class="button more-strategy" data-role="button" href="#strategy-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -305,17 +305,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -333,7 +333,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -345,7 +345,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a id="more-philosophy" class="button more-philosophy" data-role="button" href="#philosophy-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-philosophy" class="button more-philosophy" data-role="button" href="#philosophy-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -368,17 +368,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -396,7 +396,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -408,7 +408,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a id="more-features" class="button more-features" data-role="button" href="#features-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-features" class="button more-features" data-role="button" href="#features-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -431,17 +431,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -459,7 +459,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{@index}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -471,7 +471,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a id="more-news" class="button more-news" data-role="button" href="#news-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-news" class="button more-news" data-role="button" href="#news-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -494,17 +494,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
@@ -522,7 +522,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                         
                         <div id="{{id}}" class="home post">
                             <div class="text">
-                                <h2><a class="page-link" data-transition="slide" href="single.html?{{id}}" onclick="singleTracker('{{title}}');">{{{title}}}</a></h2>
+                                <h2><a class="page-link" data-transition="slide" href="single.html?{{id}}" onclick="pageTracker('{{title}}');">{{{title}}}</a></h2>
                                 <span class="post-meta">{{date}} | {{author.name}}</span>
                                 <img id="clickTest" src="{{thumbnail_images.wide-thumbnail.url}}"/>
                                 <p>{{{excerpt}}}</p>
@@ -534,7 +534,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a id="more-seo" class="button more-seo" data-role="button" href="#seo-page" onclick="loadMore($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
+                <a id="more-seo" class="button more-seo" data-role="button" href="#seo-page" onclick="buttonClick($(this).attr('id')); $.mobile.silentScroll(0);">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -557,17 +557,17 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                 <img id="logo" class="inline left" src="images/logo.png" />
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
-                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="homeTracker();">Home</a></li>
-                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
-                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
-                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
-                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
-                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="featuresTracker();">Features</a></li>
-                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="newsTracker();">News</a></li>
-                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="seoTracker();">SEO</a></li>
-                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/">Subscribe</a></li>
-                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="contactTracker();">Contact Us</a></li>
+                    <li id="home" class="page nav-item"><a data-transition="slide" href="#blog-page" onclick="pageTracker($(this).attr('href'));">Home</a></li>
+                    <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="pageTracker($(this).attr('href'));">Search</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker($(this).attr('href'));">About Us</a></li>
+                    <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="pageTracker($(this).attr('href'));">Resource Guides</a></li>
+                    <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="pageTracker($(this).attr('href'));">Strategy</a></li>
+                    <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="pageTracker($(this).attr('href'));">Philosophy</a></li>
+                    <li id="features" class="cat nav-item"><a data-transition="slide" href="#features-page" onclick="pageTracker($(this).attr('href'));">Features</a></li>
+                    <li id="news" class="cat nav-item"><a data-transition="slide" href="#news-page" onclick="pageTracker($(this).attr('href'));">News</a></li>
+                    <li id="seo" class="cat nav-item"><a data-transition="slide" href="#seo-page" onclick="pageTracker($(this).attr('href'));">SEO</a></li>
+                    <li id="subscribe" class="nav-item"><a href="http://linkarati.com/subscribe/" onclick="buttonClick($(this).attr('id'));">Subscribe</a></li>
+                    <li id="contact-us" class="page nav-item"><a data-transition="slide" href="#contact-page" onclick="pageTracker($(this).attr('href'));">Contact Us</a></li>
                 </ul>
                 <a href="index.html" class="back" data-rel="back" data-role="button" data-icon="arrow-u" data-theme="c">Back</a>
             </div><!-- /#header -->
