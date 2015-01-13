@@ -26,12 +26,6 @@ function homeTracker() {
     //alert('Button Tracked');
   }    
 }
-function pageTracker(myID) {
-  if(typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, myID);
-    //alert('Button Tracked');
-  }    
-}
 function queryTracker() {
   var thisID = jQuery(this).attr('id');
   if(typeof gaPlugin !== "undefined"){
@@ -101,12 +95,29 @@ function singleTracker(postNum) {
   }    
 }
 
-function loadMore(){
+function loadMore(page){
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent();
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "LoadMore - "+page);
   }
 }
 
+function shareClick(){
+  if(typeof gaPlugin !== "undefined") {
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Share");
+  }
+}
+
+function rgClick(){
+  if(typeof gaPlugin !== "undefined") {
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Resource Guides");
+  }
+}
+
+function searchClick(query) {
+  if(typeof gaPlugin !== "undefined") {
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Form", "Search", query);
+  }
+}
 
 function goingAway() {
     gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);

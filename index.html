@@ -29,7 +29,7 @@
                 <img id="mobile-nav" class="inline right" src="images/mobile-nav.png" />
                 <ul class="nav-wrap">
                     <li id="query" class="page nav-item"><a data-transition="slide" href="#search-page" onclick="queryTracker();">Search</a></li>
-                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="pageTracker(jQuery(this).attr('id'));">About Us</a></li>
+                    <li id="about" class="page nav-item"><a data-transition="slide" href="#about-page" onclick="aboutTracker();">About Us</a></li>
                     <li id="resources" class="nav-item"><a data-transition="slide" href="#resources-page" onclick="resourcesTracker();">Resource Guides</a></li>
                     <li id="strategy" class="cat nav-item"><a data-transition="slide" href="#strategy-page" onclick="strategyTracker();">Strategy</a></li>
                     <li id="philosophy" class="cat nav-item"><a data-transition="slide" href="#philosophy-page" onclick="philosophyTracker();">Philosophy</a></li>
@@ -66,7 +66,7 @@
                     </div>
 
                 </script>
-                <a class="button more-blog" onclick="$.mobile.silentScroll(0)" data-role="button" href="#blog-page">Load More</a>
+                <a class="button more-blog" onclick="$.mobile.silentScroll(0); loadMore('home');" data-role="button" href="#blog-page">Load More</a>
 
             </div><!-- /#blog-content -->
             
@@ -126,6 +126,8 @@
                 $queryString = $queryTerm.replace(/\ /g, '+');
                 app.search(1,$queryString);
                 e.preventDefault();
+
+                searchClick($queryTerm);
             });
         </script>
         </div><!-- /#search-page -->
@@ -218,7 +220,7 @@ This is by no means done. If we've learned anything through our years of link bu
 Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory) at ccollins@pageonepower.com.</p>
                     <p>By clicking on the link below you will be taken to the full Linkarati website.</p>
 
-                    <a id="resources-link" class="external" href="http://linkarati.com/link-building-resources/">Take Me To Full Site</a>
+                    <a id="resources-link" class="external" href="http://linkarati.com/link-building-resources/" onclick="rgClick();">Take Me To Full Site</a>
                 </div>
 
             </div><!-- /#blog-content -->
@@ -280,7 +282,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a class="button more-strategy" onclick="$.mobile.silentScroll(0)" data-role="button" href="#strategy-page">Load More</a>
+                <a class="button more-strategy" onclick="$.mobile.silentScroll(0); loadMore('strategy');" data-role="button" href="#strategy-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -343,7 +345,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a class="button more-philosophy" onclick="$.mobile.silentScroll(0)" data-role="button" href="#philosophy-page">Load More</a>
+                <a class="button more-philosophy" onclick="$.mobile.silentScroll(0); loadMore('philosophy');" data-role="button" href="#philosophy-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -406,7 +408,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a class="button more-features" onclick="$.mobile.silentScroll(0)" data-role="button" href="#features-page">Load More</a>
+                <a class="button more-features" onclick="$.mobile.silentScroll(0); loadMore('features');" data-role="button" href="#features-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -469,7 +471,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a class="button more-news" onclick="$.mobile.silentScroll(0)" data-role="button" href="#news-page">Load More</a>
+                <a class="button more-news" onclick="$.mobile.silentScroll(0); loadMore('news');" data-role="button" href="#news-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
@@ -532,7 +534,7 @@ Suggestions, comments, feedback (and shares!) are welcome. Simply email me (Cory
                     </div>
 
                 </script>
-                <a class="button more-seo" onclick="$.mobile.silentScroll(0)" data-role="button" href="#seo-page">Load More</a>
+                <a class="button more-seo" onclick="$.mobile.silentScroll(0); loadMore('seo');" data-role="button" href="#seo-page">Load More</a>
             </div><!-- /#blog-content -->
             
             <div id="footer" data-role="footer" data-theme="b">
