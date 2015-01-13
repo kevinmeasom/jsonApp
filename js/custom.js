@@ -1,4 +1,7 @@
 jQuery(document).ready(function($){
+
+  $.getScript("google-analytics.js");
+
   $this = $(this);
 
   $(document).ready(function(){
@@ -25,6 +28,13 @@ jQuery(document).ready(function($){
 
   $('#home').on('click','a',function(){
     app.blog(1);
+  });
+
+  $(function(){
+    $('a [class|="more-"]').click(function(){
+      $itemClass = $this.attr('href').val();
+      $.loadMore($itemClass);
+    });
   });
         
 /*** SEARCH
