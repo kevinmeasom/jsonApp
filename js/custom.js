@@ -33,7 +33,10 @@ jQuery(document).ready(function($){
   $(function(){
     $('a [class|="more-"]').click(function(){
       $itemClass = $this.attr('href').val();
+      $.mobile.silentScroll(0);
       $.loadMore($itemClass);
+
+      alert($itemClass);
     });
   });
         
