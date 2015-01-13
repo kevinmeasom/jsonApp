@@ -26,6 +26,12 @@ function homeTracker() {
     //alert('Button Tracked');
   }    
 }
+function pageTracker(page) {
+  if(typeof gaPlugin !== "undefined"){
+    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, page);
+    //alert('Button Tracked');
+  }    
+}
 function queryTracker() {
   var thisID = jQuery(this).attr('id');
   if(typeof gaPlugin !== "undefined"){
@@ -75,50 +81,44 @@ function seoTracker() {
     //alert('Button Tracked');
   }    
 }
-function subscribeTracker() {
-  if(typeof gaPlugin !== "undefined"){
-    gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "#subscribe-page");
-    //alert('Button Tracked');
-  }    
-}
 function contactTracker() {
   if(typeof gaPlugin !== "undefined"){
     gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "#contact-page");
     //alert('Button Tracked');
   }    
 }
-
 function singleTracker(postNum) {
   if(typeof gaPlugin !== "undefined"){
     gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, postNum);
     //alert('Single tracked');
   }    
 }
-
 function loadMore(page){
   if(typeof gaPlugin !== "undefined") {
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", page, 1);
   }
 }
-
 function shareClick(){
   if(typeof gaPlugin !== "undefined") {
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Share", 1);
   }
 }
-
 function rgClick(){
   if(typeof gaPlugin !== "undefined") {
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Resource Guides", 1);
   }
 }
-
 function searchClick(query) {
   if(typeof gaPlugin !== "undefined") {
     gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Form", "Search", query, 1);
   }
 }
-
+function subscribeTracker(page) {
+  if(typeof gaPlugin !== "undefined"){
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", page, 1);
+    //alert('Button Tracked');
+  }    
+}
 function goingAway() {
     gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
 }
