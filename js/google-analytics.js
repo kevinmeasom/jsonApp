@@ -97,25 +97,25 @@ function singleTracker(postNum) {
 
 function loadMore(page){
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", page);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", page, 1);
   }
 }
 
 function shareClick(){
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Share");
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Share", 1);
   }
 }
 
 function rgClick(){
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Resource Guides");
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "Resource Guides", 1);
   }
 }
 
 function searchClick(query) {
   if(typeof gaPlugin !== "undefined") {
-    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Form", "Search", query);
+    gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Form", "Search", query, 1);
   }
 }
 
