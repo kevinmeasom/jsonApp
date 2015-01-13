@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 
-  $.getScript("google-analytics.js");
+  $.getScript("js/google-analytics.js");
 
   $this = $(this);
 
